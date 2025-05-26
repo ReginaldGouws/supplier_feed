@@ -28,7 +28,7 @@ A custom ERPNext module for managing and importing supplier feeds in XML, CSV, a
 
 2. Get the app from GitHub:
    ```
-   bench get-app https://github.com/your-username/supplier_feed
+   bench get-app https://github.com/ReginaldGouws/supplier_feed
    ```
 
 3. Install the app on your site:
