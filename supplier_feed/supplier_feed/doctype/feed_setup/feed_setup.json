@@ -1,0 +1,154 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:feed_name",
+ "creation": "2023-05-26 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "feed_name",
+  "supplier",
+  "feed_url",
+  "feed_format",
+  "column_break_5",
+  "enabled",
+  "last_fetch",
+  "section_break_8",
+  "schedule_type",
+  "cron_expression",
+  "interval_minutes",
+  "section_break_12",
+  "field_mappings"
+ ],
+ "fields": [
+  {
+   "fieldname": "feed_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Feed Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Supplier",
+   "options": "Supplier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "feed_url",
+   "fieldtype": "Data",
+   "label": "Feed URL",
+   "reqd": 1
+  },
+  {
+   "fieldname": "feed_format",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Feed Format",
+   "options": "XML\nCSV\nJSON",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "last_fetch",
+   "fieldtype": "Datetime",
+   "label": "Last Fetch",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "Schedule"
+  },
+  {
+   "default": "Interval",
+   "fieldname": "schedule_type",
+   "fieldtype": "Select",
+   "label": "Schedule Type",
+   "options": "Interval\nCron Expression",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.schedule_type == 'Cron Expression'",
+   "fieldname": "cron_expression",
+   "fieldtype": "Data",
+   "label": "Cron Expression"
+  },
+  {
+   "default": "60",
+   "depends_on": "eval:doc.schedule_type == 'Interval'",
+   "fieldname": "interval_minutes",
+   "fieldtype": "Int",
+   "label": "Interval (Minutes)"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break",
+   "label": "Field Mapping"
+  },
+  {
+   "fieldname": "field_mappings",
+   "fieldtype": "Table",
+   "label": "Field Mappings",
+   "options": "Feed Field Mapping"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-05-26 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Supplier Feed",
+ "name": "Feed Setup",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase User",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
